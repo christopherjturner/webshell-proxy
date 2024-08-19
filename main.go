@@ -61,7 +61,7 @@ func main() {
 	log.Printf("starting reverse proxy on port %d", config.Port)
 
 	server := &http.Server{
-		Addr:    ":8085",
+		Addr:    fmt.Sprintf(":%d", config.Port),
 		Handler: mux,
 	}
 
